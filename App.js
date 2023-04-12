@@ -44,7 +44,10 @@ const App = () => {
 
       <BottomSheet showstate={state}>
         <View>
-        <Text>Hello world</Text>
+        <Text>List comp 1</Text>
+        <Text>List comp 2</Text>
+        <Text>List comp 3</Text>
+        <Text>List comp 4</Text>
         </View>
       </BottomSheet>
 
