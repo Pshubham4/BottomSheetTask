@@ -6,8 +6,9 @@ import {
   StyleSheet,
   useColorScheme,
   TouchableOpacity,
-  Text,
-  View
+  Image ,
+  View , 
+  Text
 } from 'react-native';
 
 import {
@@ -32,26 +33,24 @@ const App = () => {
   const handleSheet = () => setState(!state) 
 
   return (
-    <GestureHandlerRootView style={{flex : 1}}>
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <TouchableOpacity 
-      onPress={()=>handleSheet()}
-      style={styles.btnstyle}/>
-
-      <BottomSheet showstate={state}>
-        <View>
-        <Text>List comp 1</Text>
-        <Text>List comp 2</Text>
-        <Text>List comp 3</Text>
-        <Text>List comp 4</Text>
-        </View>
-      </BottomSheet>
-
-    </SafeAreaView>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <TouchableOpacity
+          onPress={() => handleSheet()}
+          style={styles.btnstyle}
+        />
+        <Text style={{color:'white'}}>Press to open</Text>
+        <BottomSheet showstate={state}>
+           {Array(10).fill(1).map((item,index)=>{
+            return <Text key={index}>Hello world</Text>
+           })}
+      
+        </BottomSheet>
+      </SafeAreaView>
     </GestureHandlerRootView>
   );
 };
